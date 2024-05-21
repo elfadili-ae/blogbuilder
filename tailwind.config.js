@@ -7,6 +7,13 @@ module.exports = {
     // Or if using `src` directory:
     './src/**/*.{js,ts,jsx,tsx}',
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        header: 'var(--font-noto-sans)',
+        body: 'var(--font-roboto-serif)',
+      },
+    }
+  },
   plugins: [],
 };

@@ -3,6 +3,7 @@ import { faCoins } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "../Logo";
 
 export const AppLayout = ({ children }) => {
     const { user } = useUser();
@@ -10,7 +11,7 @@ export const AppLayout = ({ children }) => {
 
     return <div className="grid grid-cols-[300px_1fr]">
         <div className="h-screen flex flex-col justify-between pt-3 text-white bg-gradient-to-b from-slate-900 to-slate-700">
-            <h1 className="text-center text-2xl p-2">Blog Builder</h1>
+            <Logo />
             <div className="w-full p-2 text-center">
                 <Link href='/post/new' className="w-full text-center block uppercase py-1 rounded-sm bg-green-400 hover:bg-green-600 transition-all duration-300">NEW POST</Link>
                 <Link href='/token-topup' className="text-sm hover:underline">
