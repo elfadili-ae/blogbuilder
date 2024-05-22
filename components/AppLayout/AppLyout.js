@@ -13,7 +13,7 @@ export const AppLayout = ({ children }) => {
         <div className="h-screen flex flex-col justify-between pt-3 text-white bg-gradient-to-b from-slate-900 to-slate-700">
             <Logo />
             <div className="w-full p-2 text-center">
-                <Link href='/post/new' className="w-full text-center block uppercase py-1 rounded-sm bg-green-400 hover:bg-green-600 transition-all duration-300">NEW POST</Link>
+                <Link href='/post/new' className="btn">NEW POST</Link>
                 <Link href='/token-topup' className="text-sm hover:underline">
                     <FontAwesomeIcon icon={faCoins} className="text-yellow-300 pr-1" />
                     24 tokens available</Link>
@@ -25,7 +25,7 @@ export const AppLayout = ({ children }) => {
                 {!!user ? <>
                     <Image className="rounded-full" src={user.picture} alt="user's picture" width={40} height={40} />
                     <div className="flex flex-col">
-                        <p>{user.email}</p>
+                        <p className="text-sm">{user.email}</p>
                         <Link href='/api/auth/logout' className="">Logout</Link>
                     </div>
                 </>

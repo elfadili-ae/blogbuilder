@@ -1,23 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
-import { useUser } from '@auth0/nextjs-auth0/client'
+import BG from '/public/blogbuilder-bg.jpg'
+import { Logo } from "../components/Logo";
 
 export default function Home() {
-  const { user } = useUser();
-  return <div>
-    hompage
-    <div>
-      {user ?
-        <div>
-          <p>Welcome {user.given_name}</p>
-          <Link href='/api/auth/logout'>
-            Logout
-          </Link>
-        </div>
-        :
-        <Link href='/api/auth/login'>
-          Login
-        </Link>
-      }
+
+  return <div className="w-screen h-screen flex justify-center items-center relative">
+    <Image className="absolute object-cover" src={BG} alt="homepage background" fill />
+    <div className="realtive z-10 bg-white/50 rounded-md p-5 max-w-sm backdrop-blur-md">
+      <Logo />
+      <hr />
+      <p className="my-2">Revolutionize your content creation with our AI-driven SAAS. Quickly produce SEO-friendly blog posts that captivate your audience and enhance your online visibility.</p>
+      <Link href='/post/new' className="btn text-white">Start</Link>
     </div>
   </div>;
 }
